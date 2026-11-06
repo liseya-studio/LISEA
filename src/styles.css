@@ -280,3 +280,20 @@ h1 em, h2 em { color: var(--orange); font-style: normal; }
   .hero-bottom { left: 6vw; right: 6vw; bottom: 22px; font-size: 7px; gap: 10px; }
   .hero-bottom > span:last-child { display: none; }
 }
+
+
+/* Good Times — LISEA brand wordmark */
+@font-face {
+  font-family: 'Good Times';
+  src: url('../good-times/good%20times%20rg.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.hero-wordmark,
+.site-header .wordmark,
+.site-footer .wordmark {
+  font-family: 'Good Times', sans-serif;
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
