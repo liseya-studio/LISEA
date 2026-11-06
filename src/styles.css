@@ -451,3 +451,18 @@ main {
   .film-reel { box-shadow: 0 14px 34px rgba(0,0,0,.55); }
   .reel-holes span { width: 7%; }
 }
+
+
+/* Fine-tune reel placement and visible film tail */
+.film-reel {
+  top: 142px;
+  right: 8.5%;
+  width: clamp(180px, 19vw, 275px);
+}
+@media (max-width: 760px) {
+  .film-reel {
+    top: 126px;
+    right: 3%;
+    width: 142px;
+  }
+}
