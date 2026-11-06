@@ -285,7 +285,7 @@ h1 em, h2 em { color: var(--orange); font-style: normal; }
 /* Good Times — LISEA brand wordmark */
 @font-face {
   font-family: 'Good Times';
-  src: url('../good-times/good%20times%20rg.ttf') format('truetype');
+  src: url('/LISEA/fonts/GoodTimes.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
