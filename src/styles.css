@@ -1,212 +1,183 @@
-import { useLayoutEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap');
 
-gsap.registerPlugin(ScrollTrigger)
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #f2eee8;
+  background: #171411;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #171411;
+  --paper: #f2eee8;
+  --orange: #ff642f;
+  --muted: #96918a;
+  --line: rgba(242, 238, 232, .18);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--ink); }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { color: var(--ink); background: var(--orange); }
 
-const categories = [
-  { id: 'short-form', title: 'SHORT FORM', subtitle: 'Короткие видео, которые удерживают внимание.', formats: 'REELS · SHORTS · TIKTOK', tone: 'warm', count: '01 / 04' },
-  { id: 'long-form', title: 'LONG FORM', subtitle: 'Большие истории с точным ритмом и монтажной логикой.', formats: 'YOUTUBE · REVIEWS · STORIES', tone: 'light', count: '02 / 04' },
-  { id: 'podcast', title: 'PODCAST', subtitle: 'Разговоры, которым хочется дослушать до конца.', formats: 'FULL EPISODES · CUTDOWNS', tone: 'dark', count: '03 / 04' },
-  { id: 'creative', title: 'CREATIVE', subtitle: 'Эдиты, реклама и эксперименты с визуальным языком.', formats: 'EDITS · ADS · EXPERIMENTS', tone: 'orange', count: '04 / 04' },
-]
+.site-header {
+  position: absolute; z-index: 20; top: 0; left: 0; width: 100%; height: 88px;
+  padding: 0 5vw; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(242,238,232,.13);
+}
+.wordmark { font-family: 'Unbounded', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -.09em; }
+.wordmark span { color: var(--orange); font: 500 9px 'Manrope', sans-serif; vertical-align: top; margin-left: 4px; }
+.main-nav { display: flex; gap: clamp(22px, 4vw, 58px); margin-left: 8%; }
+.main-nav a, .language-switch { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(242,238,232,.72); transition: color .25s; }
+.main-nav a:hover, .language-switch:hover { color: var(--orange); }
 
-const frames = [
-  { className: 'frame-a', label: 'A MOMENT / 01' },
-  { className: 'frame-b', label: 'IN BETWEEN / 02' },
-  { className: 'frame-c', label: 'SOUND & MOTION / 03' },
-  { className: 'frame-d', label: 'THE BIG PICTURE / 04' },
-]
+.hero {
+  min-height: max(760px, 100svh); position: relative; overflow: hidden; display: flex; align-items: center;
+  padding: 140px 10vw 100px; isolation: isolate;
+  background: radial-gradient(ellipse at 76% 48%, rgba(112,54,28,.23), transparent 38%), #171411;
+}
+.hero-grain { position: absolute; inset: 0; z-index: -1; opacity: .13; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E"); }
+.hero-kicker, .eyebrow, .hero-bottom, .category-index, .media-label, .media-caption, .media-counter, .site-footer, .text-link, .contact-link {
+  font-size: 10px; letter-spacing: .13em; font-weight: 700;
+}
+.hero-kicker { position: absolute; top: 132px; left: 10vw; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 14px rgba(255,100,47,.8); }
+.hero-copy { position: relative; z-index: 4; }
+.eyebrow { color: var(--orange); margin: 0 0 28px; }
+h1, h2, h3, p { margin-top: 0; }
+.hero h1, .section-heading h2, .contact h2 { font: 500 clamp(76px, 13vw, 190px)/.88 'Unbounded', sans-serif; letter-spacing: -.095em; margin: 0; }
+h1 em, h2 em { color: var(--orange); font-style: normal; }
+.hero-description { margin: 38px 0 0 7px; color: rgba(242,238,232,.7); font-size: clamp(15px, 1.5vw, 19px); line-height: 1.65; }
+.hero-bottom { position: absolute; z-index: 5; bottom: 35px; left: 5vw; right: 5vw; display: flex; justify-content: space-between; color: var(--muted); font-size: 9px; }
+.scroll-cue { color: var(--paper); }
+.scroll-cue span { color: var(--orange); margin-left: 10px; font-size: 16px; }
+.hero-orbit { position: absolute; z-index: -1; border: 1px solid rgba(255,100,47,.18); border-radius: 50%; transform: rotate(-28deg); pointer-events: none; }
+.hero-orbit-one { width: 48vw; height: 20vw; right: -5vw; top: 24%; }
+.hero-orbit-two { width: 54vw; height: 28vw; right: -9vw; top: 19%; border-color: rgba(242,238,232,.08); }
 
-function FilmArtwork() {
-  return (
-    <div className="film-art" aria-hidden="true">
-      <svg className="film-path" viewBox="0 0 1440 2700" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="film-metal" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#6d321e" />
-            <stop offset=".22" stopColor="#d17a43" />
-            <stop offset=".48" stopColor="#8d492b" />
-            <stop offset=".7" stopColor="#e49a5d" />
-            <stop offset="1" stopColor="#71351f" />
-          </linearGradient>
-          <filter id="film-shadow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="13" />
-          </filter>
-        </defs>
-        <path className="film-shadow" d="M1210 170 C1390 90 1430 310 1270 380 C1120 445 1010 270 1140 195 C1260 125 1350 290 1220 355 C1100 410 1040 260 1160 225 C1250 200 1290 300 1215 330 C1135 365 1100 270 1180 260 C1260 250 1310 450 1120 590 C950 720 1280 810 1170 980 C1060 1150 760 1030 680 1240 C590 1480 1100 1510 1000 1720 C910 1900 420 1780 390 2040 C360 2260 840 2300 720 2500 C650 2620 430 2580 300 2670" />
-        <path className="film-ribbon" d="M1210 170 C1390 90 1430 310 1270 380 C1120 445 1010 270 1140 195 C1260 125 1350 290 1220 355 C1100 410 1040 260 1160 225 C1250 200 1290 300 1215 330 C1135 365 1100 270 1180 260 C1260 250 1310 450 1120 590 C950 720 1280 810 1170 980 C1060 1150 760 1030 680 1240 C590 1480 1100 1510 1000 1720 C910 1900 420 1780 390 2040 C360 2260 840 2300 720 2500 C650 2620 430 2580 300 2670" />
-        <path className="film-perforations" d="M1210 170 C1390 90 1430 310 1270 380 C1120 445 1010 270 1140 195 C1260 125 1350 290 1220 355 C1100 410 1040 260 1160 225 C1250 200 1290 300 1215 330 C1135 365 1100 270 1180 260 C1260 250 1310 450 1120 590 C950 720 1280 810 1170 980 C1060 1150 760 1030 680 1240 C590 1480 1100 1510 1000 1720 C910 1900 420 1780 390 2040 C360 2260 840 2300 720 2500 C650 2620 430 2580 300 2670" />
-      </svg>
-      <div className="film-reel">
-        <div className="reel-core"><span /><span /><span /></div>
-        <div className="reel-glint" />
-      </div>
-    </div>
-  )
+.hero-collage { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+.collage-frame {
+  position: absolute; width: clamp(145px, 19vw, 285px); aspect-ratio: 1.42; overflow: hidden;
+  border: 1px solid rgba(242,238,232,.35); box-shadow: 0 25px 75px rgba(0,0,0,.42);
+  background-color: #40332a;
+}
+.collage-frame::before { content: ''; position: absolute; inset: 0; opacity: .9; }
+.frame-a { top: 20%; right: 17%; transform: rotate(7deg); }
+.frame-a::before { background: radial-gradient(ellipse at 70% 35%, #e5a16c 0 7%, transparent 35%), linear-gradient(125deg, transparent 30%, #a34d2c 31% 48%, #201a17 49% 100%); }
+.frame-b { top: 48%; right: 7%; width: clamp(130px, 15vw, 220px); transform: rotate(-9deg); }
+.frame-b::before { background: linear-gradient(145deg, #c8a98b, transparent 40%), radial-gradient(ellipse at 35% 75%, #d36a3d, transparent 34%), #28211d; }
+.frame-c { top: 58%; right: 29%; width: clamp(125px, 14vw, 205px); transform: rotate(5deg); }
+.frame-c::before { background: linear-gradient(90deg, transparent 35%, rgba(236,177,126,.8) 36% 40%, transparent 41%), linear-gradient(145deg, #181716, #75503a 60%, #d58a58); }
+.frame-d { top: 27%; right: 39%; width: clamp(110px, 12vw, 175px); transform: rotate(-12deg); }
+.frame-d::before { background: radial-gradient(ellipse at 55% 45%, #e7b58c, transparent 18%), linear-gradient(130deg, #72513e, #211c18 65%); }
+.collage-frame-index, .collage-frame-label, .collage-frame-cross { position: absolute; z-index: 1; color: rgba(255,245,232,.8); }
+.collage-frame-index { top: 12px; left: 14px; font-size: 9px; letter-spacing: .15em; }
+.collage-frame-label { bottom: 12px; left: 14px; font-size: 7px; letter-spacing: .13em; }
+.collage-frame-cross { right: 13px; bottom: 8px; color: var(--orange); font-size: 17px; }
+
+.film-art { position: absolute; z-index: 3; inset: 0; height: 2700px; pointer-events: none; overflow: visible; }
+.film-path { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }
+.film-shadow { fill: none; stroke: rgba(0,0,0,.6); stroke-width: 66; filter: url(#film-shadow); transform: translate(5px, 12px); }
+.film-ribbon { fill: none; stroke: url(#film-metal); stroke-width: 48; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5200; stroke-dashoffset: 5200; filter: drop-shadow(0 5px 8px rgba(0,0,0,.35)); }
+.film-perforations { fill: none; stroke: rgba(34,19,13,.78); stroke-width: 7; stroke-linecap: butt; stroke-dasharray: 3 23; stroke-dashoffset: 5200; }
+.film-reel {
+  position: absolute; top: 104px; right: 7.5%; width: clamp(150px, 18vw, 255px); aspect-ratio: 1;
+  border-radius: 50%; border: 14px solid #8f492a;
+  background: radial-gradient(circle, #171411 0 16%, #b66a3d 17% 19%, #41251b 20% 27%, #c27a49 28% 31%, #241813 32% 42%, #a65a32 43% 48%, #1d1713 49% 57%, #bd7142 58% 63%, #362017 64% 100%);
+  box-shadow: inset 0 0 20px #100c09, 0 22px 70px rgba(0,0,0,.55), 0 0 40px rgba(203,111,62,.12);
+  transform-style: preserve-3d;
+}
+.film-reel::before { content: ''; position: absolute; inset: -17px; border: 2px solid rgba(231,158,105,.65); border-radius: 50%; }
+.film-reel::after { content: ''; position: absolute; inset: 17%; border: 1px solid rgba(239,174,121,.5); border-radius: 50%; }
+.reel-core { position: absolute; inset: 37%; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d18a58, #4c291a 62%, #160f0b); box-shadow: 0 0 0 8px rgba(15,10,7,.85), 0 0 0 10px #c17a4a; }
+.reel-core span { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #21130d; top: 50%; left: 50%; }
+.reel-core span:nth-child(1) { transform: translate(-50%, -50%); }
+.reel-core span:nth-child(2) { transform: translate(-50%, -50%) rotate(120deg) translateY(-12px); }
+.reel-core span:nth-child(3) { transform: translate(-50%, -50%) rotate(240deg) translateY(-12px); }
+.reel-glint { position: absolute; inset: 4px; border-radius: 50%; background: conic-gradient(from 210deg, transparent 0 24%, rgba(255,204,155,.4) 27%, transparent 34% 70%, rgba(255,201,148,.25) 75%, transparent 82%); mix-blend-mode: screen; }
+
+.section-pad { padding: clamp(90px, 13vw, 190px) 10vw; }
+.intro { background: var(--paper); color: var(--ink); position: relative; z-index: 2; }
+.intro .eyebrow { color: #a64a2b; }
+.intro-layout { display: grid; grid-template-columns: 1.3fr .7fr; gap: 8vw; align-items: end; }
+.intro h2 { font: 500 clamp(42px, 6.5vw, 88px)/1.08 'Unbounded', sans-serif; letter-spacing: -.08em; margin: 0; }
+.intro h2 span { color: #c34c27; }
+.intro-layout > p { max-width: 390px; margin: 0 0 8px; color: #625d57; line-height: 1.8; font-size: 15px; }
+.work { background: var(--ink); position: relative; z-index: 2; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 90px; }
+.section-heading h2 { font-size: clamp(66px, 10vw, 132px); }
+.section-note { color: var(--muted); line-height: 1.7; font-size: 13px; margin: 0 0 8px; }
+.category-list { display: flex; flex-direction: column; gap: 30px; }
+.category-card { min-height: 430px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 6vw; align-items: center; padding: 42px 0; border-top: 1px solid var(--line); }
+.category-card:nth-child(even) { grid-template-columns: 1.15fr .85fr; }
+.category-card:nth-child(even) .category-info { order: 2; }
+.category-info h3 { font: 500 clamp(34px, 4.5vw, 62px)/1 'Unbounded', sans-serif; letter-spacing: -.08em; margin: 28px 0 18px; }
+.category-info p { color: rgba(242,238,232,.65); line-height: 1.7; max-width: 340px; font-size: 14px; margin-bottom: 30px; }
+.category-index { color: var(--muted); font-size: 9px; }
+.text-link { display: inline-flex; gap: 18px; align-items: center; border-bottom: 1px solid rgba(242,238,232,.35); padding-bottom: 10px; font-size: 9px; }
+.text-link span, .contact-link span { color: var(--orange); font-size: 16px; }
+.media-placeholder { position: relative; width: 100%; }
+.media-frame { aspect-ratio: 16 / 10; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 65% 35%, rgba(255,100,47,.32), transparent 35%), linear-gradient(135deg, #39302a, #1d1916 58%, #4a3025); border: 1px solid rgba(242,238,232,.15); }
+.category-light .media-frame { background: radial-gradient(ellipse at 30% 70%, rgba(255,100,47,.24), transparent 38%), linear-gradient(135deg, #66584c, #28221d 65%, #a17a5e); }
+.category-dark .media-frame { background: radial-gradient(ellipse at 70% 30%, rgba(255,100,47,.2), transparent 35%), linear-gradient(135deg, #282522, #10100f 70%, #514237); }
+.category-orange .media-frame { background: radial-gradient(ellipse at 50% 50%, rgba(255,185,130,.35), transparent 38%), linear-gradient(135deg, #a44325, #3a2018 70%, #171411); }
+.media-label { position: absolute; top: 20px; left: 20px; color: rgba(242,238,232,.65); font-size: 8px; }
+.media-play { font-size: 32px; color: var(--orange); }
+.media-caption { position: absolute; bottom: 20px; right: 20px; color: rgba(242,238,232,.55); font-size: 8px; }
+.media-counter { display: block; text-align: right; color: var(--muted); margin-top: 12px; font-size: 8px; }
+
+.contact { min-height: 690px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; position: relative; z-index: 2; overflow: hidden; background: var(--paper); color: var(--ink); }
+.contact .eyebrow { color: #a64a2b; }
+.contact h2 { font-size: clamp(66px, 11vw, 150px); }
+.contact-link { margin-top: 46px; padding-bottom: 12px; border-bottom: 1px solid rgba(23,20,17,.35); display: inline-flex; align-items: center; gap: 25px; }
+.site-footer { position: absolute; left: 5vw; right: 5vw; bottom: 30px; padding-top: 22px; border-top: 1px solid rgba(23,20,17,.2); display: flex; align-items: center; justify-content: space-between; color: #77716a; font-size: 8px; }
+.site-footer .wordmark { color: var(--ink); }
+
+@media (max-width: 760px) {
+  .site-header { height: 72px; padding: 0 6vw; }
+  .wordmark { font-size: 18px; }
+  .main-nav { gap: 15px; margin: 0; }
+  .main-nav a { font-size: 9px; }
+  .language-switch { display: none; }
+  .hero { min-height: 760px; min-height: 100svh; padding: 130px 7vw 100px; }
+  .hero-kicker { left: 7vw; top: 112px; font-size: 8px; }
+  .hero h1 { font-size: clamp(68px, 17vw, 118px); }
+  .hero-bottom { left: 7vw; right: 7vw; bottom: 25px; font-size: 7px; }
+  .hero-bottom > span:last-child { display: none; }
+  .hero-orbit-one { width: 90vw; height: 45vw; right: -25vw; top: 35%; }
+  .hero-orbit-two { width: 100vw; height: 60vw; right: -30vw; top: 30%; }
+  .collage-frame { width: 34vw; }
+  .frame-a { top: 24%; right: 4%; }
+  .frame-b { top: 53%; right: 3%; width: 29vw; }
+  .frame-c { top: 62%; right: 37%; width: 28vw; }
+  .frame-d { top: 32%; right: 42%; width: 24vw; }
+  .film-art { height: 2350px; opacity: .78; }
+  .film-ribbon { stroke-width: 30; }
+  .film-perforations { stroke-width: 4; stroke-dasharray: 2 16; }
+  .film-reel { width: 125px; right: 2%; top: 115px; border-width: 9px; }
+  .section-pad { padding: 95px 7vw; }
+  .intro-layout { grid-template-columns: 1fr; gap: 30px; }
+  .intro h2 { font-size: clamp(42px, 10vw, 66px); }
+  .intro-layout > p { font-size: 14px; }
+  .section-heading { margin-bottom: 55px; align-items: start; flex-direction: column; gap: 25px; }
+  .section-heading h2 { font-size: clamp(64px, 15vw, 100px); }
+  .category-card, .category-card:nth-child(even) { grid-template-columns: 1fr; gap: 30px; padding: 35px 0; }
+  .category-card:nth-child(even) .category-info { order: 0; }
+  .category-info h3 { font-size: clamp(34px, 9vw, 52px); margin: 20px 0 14px; }
+  .media-frame { aspect-ratio: 4 / 3; }
+  .contact { min-height: 650px; }
+  .contact h2 { font-size: clamp(60px, 14vw, 100px); }
+  .site-footer { left: 7vw; right: 7vw; gap: 12px; font-size: 7px; }
+  .site-footer > span:nth-child(2) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .film-art { display: none; }
 }
 
-function HeroScene() {
-  return (
-    <section className="hero" id="top">
-      <div className="hero-grain" aria-hidden="true" />
-      <div className="hero-kicker"><span className="status-dot" /> INDEPENDENT VIDEO EDITOR</div>
-      <div className="hero-copy">
-        <p className="eyebrow">МОНТАЖ · РИТМ · ИСТОРИЯ</p>
-        <h1>MAKE IT<br /><em>MOVE.</em></h1>
-        <p className="hero-description">Собираю кадры в истории,<br />которые хочется смотреть.</p>
-      </div>
-      <div className="hero-collage" aria-hidden="true">
-        {frames.map((frame, index) => (
-          <div className={`collage-frame ${frame.className}`} key={frame.className}>
-            <span className="collage-frame-index">0{index + 1}</span>
-            <span className="collage-frame-label">{frame.label}</span>
-            <span className="collage-frame-cross">+</span>
-          </div>
-        ))}
-      </div>
-      <div className="hero-bottom">
-        <span>VIDEO EDITOR / LISEA</span>
-        <a href="#work" className="scroll-cue">SCROLL TO EXPLORE <span>↓</span></a>
-        <span>AVAILABLE FOR PROJECTS</span>
-      </div>
-      <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
-      <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
-    </section>
-  )
-}
 
-function App() {
-  useLayoutEffect(() => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduceMotion) return
-
-    const ctx = gsap.context(() => {
-      const intro = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      intro.from('.hero-kicker', { y: 14, opacity: 0, duration: .7 })
-        .from('.hero-copy .eyebrow', { y: 18, opacity: 0, duration: .6 }, '-=.35')
-        .from('.hero h1', { y: 70, opacity: 0, duration: 1.05 }, '-=.35')
-        .from('.hero-description', { y: 20, opacity: 0, duration: .7 }, '-=.55')
-        .from('.collage-frame', { y: 90, opacity: 0, rotate: 12, scale: .72, stagger: .12, duration: 1.1 }, '-=1.05')
-        .from('.film-reel', { scale: .65, opacity: 0, rotate: -40, duration: 1.1 }, '-=1')
-
-      gsap.to(['.film-ribbon', '.film-perforations'], {
-        strokeDashoffset: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 1.2,
-        },
-      })
-
-      gsap.to('.film-reel', {
-        rotate: 520,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 1.5,
-        },
-      })
-
-      gsap.to('.hero-collage', {
-        yPercent: -18,
-        scale: .88,
-        opacity: .2,
-        ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
-      })
-
-      gsap.utils.toArray<HTMLElement>('.category-card').forEach((card) => {
-        gsap.from(card.querySelectorAll('.category-info, .media-placeholder'), {
-          y: 55,
-          opacity: 0,
-          duration: .9,
-          stagger: .15,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: card, start: 'top 82%', once: true },
-        })
-      })
-    })
-
-    return () => ctx.revert()
-  }, [])
-
-  return (
-    <main>
-      <FilmArtwork />
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="LISEA home">LISEA<span>®</span></a>
-        <nav className="main-nav" aria-label="Основная навигация">
-          <a href="#work">Работы</a>
-          <a href="#services">Форматы</a>
-          <a href="#contact">Контакт</a>
-        </nav>
-        <a className="language-switch" href="#contact">EN / RU</a>
-      </header>
-
-      <HeroScene />
-
-      <section className="intro section-pad" id="services">
-        <p className="eyebrow">НЕ ПРОСТО СКЛЕИТЬ КАДРЫ</p>
-        <div className="intro-layout">
-          <h2>У каждого видео<br />есть свой <span>ритм.</span></h2>
-          <p>Я помогаю найти его через монтаж, звук и детали. От короткого вертикального ролика до большого выпуска — с вниманием к задаче и характеру проекта.</p>
-        </div>
-      </section>
-
-      <section className="work section-pad" id="work">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">SELECTED DIRECTIONS</p>
-            <h2>WHAT I<br /><em>EDIT.</em></h2>
-          </div>
-          <p className="section-note">Разные форматы.<br />Один подход к деталям.</p>
-        </div>
-
-        <div className="category-list">
-          {categories.map((category) => (
-            <article className={`category-card category-${category.tone}`} key={category.id}>
-              <div className="category-info">
-                <span className="category-index">{category.formats}</span>
-                <h3>{category.title}</h3>
-                <p>{category.subtitle}</p>
-                <a href="#contact" className="text-link">ОБСУДИТЬ ПРОЕКТ <span>↗</span></a>
-              </div>
-              <div className="media-placeholder" aria-label="Место для видеопревью портфолио">
-                <div className="media-frame">
-                  <span className="media-label">LISEA / WORK IN MOTION</span>
-                  <span className="media-play">↗</span>
-                  <span className="media-caption">ВИДЕОПРЕВЬЮ</span>
-                </div>
-                <span className="media-counter">{category.count} — SELECTED WORKS</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="contact section-pad" id="contact">
-        <p className="eyebrow">HAVE A PROJECT IN MIND?</p>
-        <h2>LET'S MAKE<br /><em>IT MOVE.</em></h2>
-        <a className="contact-link" href="mailto:hello@lisea.studio">ОБСУДИТЬ ПРОЕКТ <span>↗</span></a>
-        <footer className="site-footer">
-          <a className="wordmark" href="#top">LISEA<span>®</span></a>
-          <span>INDEPENDENT VIDEO EDITOR</span>
-          <span>© LISEA 2026</span>
-        </footer>
-      </section>
-    </main>
-  )
-}
-
-export default App
-
-
-/* LISEA v2 — centered identity, layered film collage and consistent navigation */
+/* LISEA hero and navigation layout */
 .site-header {
   justify-content: center;
   padding: 0 5vw;
@@ -217,13 +188,16 @@ export default App
   top: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  gap: clamp(28px, 5vw, 72px);
+  gap: clamp(22px, 4vw, 58px);
 }
 .language-switch {
   position: absolute;
   right: 5vw;
   top: 50%;
   transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   appearance: none;
   border: 0;
   background: transparent;
@@ -269,7 +243,13 @@ export default App
 .collage-frame:nth-child(3n + 2)::before {
   background: radial-gradient(ellipse at 70% 45%, rgba(217,135,87,.8), transparent 25%), linear-gradient(145deg, #211a16, #a35c3b 55%, #29201a);
 }
-.collage-frame-index { font: 700 8px 'Manrope', sans-serif; opacity: .55; }
+.collage-frame-index {
+  top: 10px;
+  left: 12px;
+  color: rgba(242,238,232,.75);
+  font: 700 8px 'Manrope', sans-serif;
+  opacity: .55;
+}
 .hero-wordmark {
   position: absolute;
   z-index: 4;
@@ -283,12 +263,14 @@ export default App
   text-shadow: 0 8px 50px rgba(0,0,0,.45);
   pointer-events: none;
 }
-.hero-bottom {
-  z-index: 5;
-}
+.hero-bottom { z-index: 5; }
 @media (max-width: 760px) {
   .site-header { height: 72px; }
-  .main-nav { left: 7vw; transform: translateY(-50%); gap: 15px; }
+  .main-nav {
+    left: 7vw;
+    transform: translateY(-50%);
+    gap: 15px;
+  }
   .main-nav a { font-size: 8px; }
   .language-switch { right: 5vw; font-size: 9px; }
   .hero { min-height: 100svh; }
