@@ -75,7 +75,15 @@ function FilmArtwork() {
         <path className="film-ribbon" d="M1210 170 C1390 90 1430 310 1270 380 C1120 445 1010 270 1140 195 C1260 125 1350 290 1220 355 C1100 410 1040 260 1160 225 C1250 200 1290 300 1215 330 C1135 365 1100 270 1180 260 C1260 250 1310 450 1120 590 C950 720 1280 810 1170 980 C1060 1150 760 1030 680 1240 C590 1480 1100 1510 1000 1720 C910 1900 420 1780 390 2040 C360 2260 840 2300 720 2500 C650 2620 430 2580 300 2670" />
         <path className="film-perforations" d="M1210 170 C1390 90 1430 310 1270 380 C1120 445 1010 270 1140 195 C1260 125 1350 290 1220 355 C1100 410 1040 260 1160 225 C1250 200 1290 300 1215 330 C1135 365 1100 270 1180 260 C1260 250 1310 450 1120 590 C950 720 1280 810 1170 980 C1060 1150 760 1030 680 1240 C590 1480 1100 1510 1000 1720 C910 1900 420 1780 390 2040 C360 2260 840 2300 720 2500 C650 2620 430 2580 300 2670" />
       </svg>
-      <div className="film-reel"><div className="reel-core"><span /><span /><span /></div><div className="reel-glint" /></div>
+      <div className="film-reel">
+        <div className="reel-backplate" />
+        <div className="reel-winding" />
+        <div className="reel-holes">{Array.from({ length: 8 }, (_, index) => (
+          <span key={index} style={{ transform: `translate(-50%, -50%) rotate(${index * 45}deg) translateY(-390%)` }} />
+        ))}</div>
+        <div className="reel-hub"><span /></div>
+        <div className="reel-glint" />
+      </div>
     </div>
   )
 }
