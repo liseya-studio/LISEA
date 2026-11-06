@@ -90,7 +90,7 @@ function App() {
         .from('.collage-frame', { y: 90, opacity: 0, rotate: 12, scale: .72, stagger: .12, duration: 1.1 }, '-=1.05')
         .from('.film-reel', { scale: .65, opacity: 0, rotate: -40, duration: 1.1 }, '-=1')
 
-      gsap.to('.film-path', {
+      gsap.to(['.film-ribbon', '.film-perforations'], {
         strokeDashoffset: 0,
         ease: 'none',
         scrollTrigger: {
