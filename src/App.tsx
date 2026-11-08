@@ -55,145 +55,145 @@ const copy = {
 
 const frames = [
   {
-    "x": 0,
-    "y": 0,
-    "w": 25,
-    "h": 25,
+    "x": -2,
+    "y": -2,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80"
   },
   {
     "x": 25,
-    "y": 0,
-    "w": 25,
-    "h": 25,
+    "y": -6,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 50,
-    "y": 0,
-    "w": 25,
-    "h": 25,
+    "x": 52,
+    "y": -2,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 75,
-    "y": 0,
-    "w": 25,
-    "h": 25,
+    "x": 73,
+    "y": -6,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 0,
-    "y": 25,
-    "w": 25,
-    "h": 25,
+    "x": -5,
+    "y": 23,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 25,
-    "y": 25,
-    "w": 25,
-    "h": 25,
+    "x": 22,
+    "y": 19,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 50,
-    "y": 25,
-    "w": 25,
-    "h": 25,
+    "x": 43,
+    "y": 23,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 75,
-    "y": 25,
-    "w": 25,
-    "h": 25,
+    "x": 70,
+    "y": 19,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 0,
-    "y": 50,
-    "w": 25,
-    "h": 25,
+    "x": 2,
+    "y": 48,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 25,
-    "y": 50,
-    "w": 25,
-    "h": 25,
+    "x": 23,
+    "y": 44,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
   },
   {
     "x": 50,
-    "y": 50,
-    "w": 25,
-    "h": 25,
+    "y": 48,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 75,
-    "y": 50,
-    "w": 25,
-    "h": 25,
+    "x": 77,
+    "y": 44,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 0,
-    "y": 75,
-    "w": 25,
-    "h": 25,
+    "x": -7,
+    "y": 73,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 25,
-    "y": 75,
-    "w": 25,
-    "h": 25,
+    "x": 20,
+    "y": 69,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 50,
-    "y": 75,
-    "w": 25,
-    "h": 25,
+    "x": 47,
+    "y": 73,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 75,
-    "y": 75,
-    "w": 25,
-    "h": 25,
+    "x": 68,
+    "y": 69,
+    "w": 31,
+    "h": 33,
     "layer": 0,
     "ratio": "16 / 9",
     "src": "https://images.unsplash.com/photo-1514905552197-0610a4d8fd73?auto=format&fit=crop&w=1200&q=80"
@@ -271,7 +271,7 @@ function FilmArtwork() {
         <path className="film-edge-left" d="M1290 455 C1395 455 1460 505 1435 610 C1410 710 1270 725 1250 840 C1220 980 1390 1050 1320 1210 C1260 1360 1000 1370 990 1530 C980 1690 1270 1760 1160 1950 C1080 2100 790 2120 790 2310 C790 2460 580 2540 410 2700" />
         <path className="film-edge-right" d="M1290 455 C1395 455 1460 505 1435 610 C1410 710 1270 725 1250 840 C1220 980 1390 1050 1320 1210 C1260 1360 1000 1370 990 1530 C980 1690 1270 1760 1160 1950 C1080 2100 790 2120 790 2310 C790 2460 580 2540 410 2700" />
       </svg>
-      <div className="film-reel"><img src="/LISEA/reel.svg" alt="" /></div>
+
     </div>
   )
 }
@@ -287,6 +287,7 @@ function HeroScene() {
         ))}
       </div>
       <h1 className="hero-wordmark">LISEA</h1>
+      <div className="hero-reel" aria-hidden="true"><img src="/LISEA/reel.svg" alt="" /></div>
       
     </section>
   )
@@ -309,10 +310,7 @@ function App() {
         strokeDashoffset: 0, ease: 'none',
         scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 1.2 },
       })
-      gsap.to('.film-reel img', { rotate: 520, ease: 'none', scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 1.5 } })
-      gsap.to('.collage-layer-0', { yPercent: -32, xPercent: -8, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
-      gsap.to('.collage-layer-1', { yPercent: 38, xPercent: 9, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
-      gsap.to('.collage-layer-2', { yPercent: 68, scale: .9, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
+      gsap.to('.hero-reel img', { rotate: 520, ease: 'none', scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 1.5 } })
       gsap.utils.toArray<HTMLElement>('.category-card').forEach((card) => {
         gsap.from(card.querySelectorAll('.category-info, .media-placeholder'), {
           y: 55, opacity: 0, duration: .9, stagger: .15, ease: 'power3.out',
