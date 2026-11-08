@@ -56,163 +56,183 @@ const copy = {
 const frames = [
   {
     "x": 0,
-    "y": 5,
-    "w": 25,
-    "h": 16,
+    "y": 0,
+    "w": 22,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 18,
-    "y": 4,
-    "w": 24,
-    "h": 17,
+    "x": 22,
+    "y": 0,
+    "w": 22,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 39,
-    "y": 5,
-    "w": 24,
-    "h": 17,
+    "x": 44,
+    "y": 0,
+    "w": 22,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 62,
-    "y": 4,
-    "w": 25,
-    "h": 16,
+    "x": 66,
+    "y": 0,
+    "w": 22,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 82,
-    "y": 7,
-    "w": 23,
-    "h": 16,
+    "x": 88,
+    "y": 0,
+    "w": 12,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 2,
-    "y": 25,
-    "w": 30,
-    "h": 21,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 25,
-    "y": 23,
-    "w": 28,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 48,
-    "y": 24,
-    "w": 30,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 74,
-    "y": 24,
-    "w": 29,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80"
   },
   {
     "x": 0,
-    "y": 47,
-    "w": 28,
-    "h": 20,
-    "layer": 2,
-    "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 19,
-    "y": 44,
-    "w": 34,
-    "h": 25,
-    "layer": 2,
-    "src": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 43,
-    "y": 43,
-    "w": 34,
-    "h": 25,
-    "layer": 2,
-    "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 70,
-    "y": 45,
-    "w": 31,
-    "h": 21,
-    "layer": 2,
-    "src": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 1,
-    "y": 68,
-    "w": 27,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 24,
-    "y": 67,
-    "w": 28,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 47,
-    "y": 66,
-    "w": 29,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1514905552197-0610a4d8fd73?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 72,
-    "y": 67,
-    "w": 29,
-    "h": 20,
-    "layer": 1,
-    "src": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=75"
-  },
-  {
-    "x": 10,
-    "y": 82,
-    "w": 26,
-    "h": 17,
+    "y": 39,
+    "w": 22,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    "x": 39,
-    "y": 81,
-    "w": 27,
-    "h": 17,
+    "x": 22,
+    "y": 39,
+    "w": 22,
+    "h": 39,
     "layer": 0,
-    "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=75"
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 44,
+    "y": 39,
+    "w": 22,
+    "h": 39,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 66,
+    "y": 39,
+    "w": 22,
+    "h": 39,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 88,
+    "y": 39,
+    "w": 12,
+    "h": 39,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 0,
+    "y": 78,
+    "w": 22,
+    "h": 22,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 22,
+    "y": 78,
+    "w": 22,
+    "h": 22,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 44,
+    "y": 78,
+    "w": 22,
+    "h": 22,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 66,
+    "y": 78,
+    "w": 22,
+    "h": 22,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 88,
+    "y": 78,
+    "w": 12,
+    "h": 22,
+    "layer": 0,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 12,
+    "y": 18,
+    "w": 20,
+    "h": 56,
+    "layer": 1,
+    "ratio": "9 / 16",
+    "src": "https://images.unsplash.com/photo-1514905552197-0610a4d8fd73?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 33,
+    "y": 22,
+    "w": 35,
+    "h": 39,
+    "layer": 1,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=80"
   },
   {
     "x": 69,
-    "y": 81,
-    "w": 27,
-    "h": 17,
-    "layer": 0,
-    "src": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=75"
+    "y": 16,
+    "w": 18,
+    "h": 58,
+    "layer": 1,
+    "ratio": "9 / 16",
+    "src": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 29,
+    "y": 30,
+    "w": 39,
+    "h": 42,
+    "layer": 2,
+    "ratio": "16 / 9",
+    "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "x": 72,
+    "y": 32,
+    "w": 17,
+    "h": 48,
+    "layer": 2,
+    "ratio": "9 / 16",
+    "src": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80"
   }
 ]
 
@@ -253,7 +273,7 @@ function HeroScene({ t }: { t: typeof copy.ru }) {
       <div className="hero-collage" aria-hidden="true">
         {frames.map((frame, index) => (
           <div className={`collage-frame collage-layer-${frame.layer}`} key={index}
-            style={{ left: `${frame.x}%`, top: `${frame.y}%`, width: `${frame.w}%`, height: `${frame.h}%`, backgroundImage: `linear-gradient(180deg, rgba(5,8,12,.05), rgba(5,8,12,.25)), url("${frame.src}")` }} />
+            style={{ left: `${frame.x}%`, top: `${frame.y}%`, width: `${frame.w}%`, height: `${frame.h}%`, aspectRatio: frame.ratio, backgroundImage: `linear-gradient(180deg, rgba(5,8,12,.05), rgba(5,8,12,.25)), url("${frame.src}")` }} />
         ))}
       </div>
       <h1 className="hero-wordmark">LISEA</h1>
@@ -271,9 +291,9 @@ function App() {
     if (reduceMotion) return
     const ctx = gsap.context(() => {
       const intro = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      intro.from('.collage-layer-0', { y: 35, opacity: 0, scale: .96, stagger: .045, duration: .65 })
-        .from('.collage-layer-1', { y: 42, opacity: 0, scale: .94, stagger: .055, duration: .65 }, '-=.35')
-        .from('.collage-layer-2', { y: 50, opacity: 0, scale: .92, stagger: .065, duration: .7 }, '-=.3')
+      intro.from('.collage-layer-0', { opacity: 0, scale: 1.025, stagger: .025, duration: .75 })
+        .from('.collage-layer-1', { opacity: 0, scale: 1.08, stagger: .075, duration: .75 }, '+=.05')
+        .from('.collage-layer-2', { opacity: 0, scale: 1.12, stagger: .1, duration: .8 }, '+=.05')
         .from('.hero-wordmark', { y: 35, opacity: 0, scale: .96, duration: 1.1 }, '+=.1')
       gsap.to(['.film-ribbon', '.film-perforations', '.film-edge-left', '.film-edge-right'], {
         strokeDashoffset: 0, ease: 'none',
