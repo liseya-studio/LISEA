@@ -253,15 +253,7 @@ function FilmArtwork() {
         <path className="film-edge-left" d="M1290 455 C1395 455 1460 505 1435 610 C1410 710 1270 725 1250 840 C1220 980 1390 1050 1320 1210 C1260 1360 1000 1370 990 1530 C980 1690 1270 1760 1160 1950 C1080 2100 790 2120 790 2310 C790 2460 580 2540 410 2700" />
         <path className="film-edge-right" d="M1290 455 C1395 455 1460 505 1435 610 C1410 710 1270 725 1250 840 C1220 980 1390 1050 1320 1210 C1260 1360 1000 1370 990 1530 C980 1690 1270 1760 1160 1950 C1080 2100 790 2120 790 2310 C790 2460 580 2540 410 2700" />
       </svg>
-      <div className="film-reel">
-        <div className="reel-backplate" />
-        <div className="reel-winding" />
-        <div className="reel-holes">{Array.from({ length: 8 }, (_, index) => (
-          <span key={index} style={{ transform: `translate(-50%, -50%) rotate(${index * 45}deg) translateY(-390%)` }} />
-        ))}</div>
-        <div className="reel-hub"><span /></div>
-        <div className="reel-glint" />
-      </div>
+      <div className="film-reel"><img src="/LISEA/reel.svg" alt="" /></div>
     </div>
   )
 }
