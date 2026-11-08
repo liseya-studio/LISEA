@@ -598,3 +598,24 @@ main { background: #0b0e12; }
   }
   .film-reel { right: 1%; top: 48%; }
 }
+
+
+/* Three actual depth layers: full-bleed back wall, smaller middle tier, compact front tier */
+.hero-collage { inset: 0; background:#080a0e; }
+.collage-layer-0 { border-radius:0; border-color:rgba(255,255,255,.08); box-shadow:none; }
+.collage-layer-1 { border-radius:4px; border:1px solid rgba(255,255,255,.2); box-shadow:0 18px 55px #000b; }
+.collage-layer-2 { border-radius:4px; border:1px solid rgba(255,255,255,.3); box-shadow:0 25px 75px #000d; }
+.film-reel {
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  isolation:auto;
+  right:clamp(5%,9vw,13%);
+  top:clamp(275px,39vh,400px);
+  width:clamp(155px,15vw,225px);
+}
+.film-reel::before,.film-reel::after { content:none!important; }
+.film-reel img { display:block; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 15px 18px rgba(0,0,0,.65)); }
+@media(max-width:760px) {
+  .film-reel { top:48%;right:1%;width:clamp(94px,26vw,135px); }
+}
