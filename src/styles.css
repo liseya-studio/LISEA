@@ -466,3 +466,106 @@ main {
     width: 142px;
   }
 }
+
+
+/* Approved LISEA desktop hero: straight layered video frames, clean neutral palette */
+:root { --ink: #0b0e12; --paper: #f4f4f2; --orange: #ff642f; --muted: #a2a7af; }
+html, body { background: #0b0e12; }
+main { background: #0b0e12; }
+.site-header {
+  z-index: 30;
+  height: 80px;
+  border-bottom: 0;
+  background: linear-gradient(180deg,rgba(6,8,11,.88),rgba(6,8,11,0));
+}
+.main-nav a { font-size: 13px; letter-spacing: .015em; text-transform: none; color: #f3f4f6; }
+.main-nav { gap: clamp(28px,4vw,66px); }
+.hero {
+  min-height: 100svh;
+  background: #0b0e12;
+  overflow: hidden;
+}
+.hero::after {
+  z-index: 2;
+  background: linear-gradient(180deg,rgba(5,7,10,.45) 0%,transparent 22% 70%,rgba(5,7,10,.6) 100%);
+  opacity: 1;
+}
+.hero-grain { opacity: .08; }
+.hero-collage {
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.collage-frame {
+  position: absolute;
+  transform: none !important;
+  aspect-ratio: auto;
+  border: 1px solid rgba(230,235,242,.24);
+  border-radius: 3px;
+  background-color: #202630;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 14px 38px rgba(0,0,0,.48);
+}
+.collage-frame::before { content: none; }
+.collage-layer-0 { z-index: 1; filter: brightness(.68) saturate(.8); }
+.collage-layer-1 { z-index: 2; filter: brightness(.83) saturate(.9); box-shadow: 0 18px 46px rgba(0,0,0,.6); }
+.collage-layer-2 { z-index: 3; box-shadow: 0 22px 62px rgba(0,0,0,.68); }
+.hero-wordmark {
+  z-index: 7;
+  top: 53%;
+  left: 46%;
+  font-size: clamp(82px, 13.5vw, 198px);
+  letter-spacing: -.035em;
+  color: #f5f5f3;
+  text-shadow: 0 5px 24px rgba(0,0,0,.7), 0 12px 60px rgba(0,0,0,.5);
+}
+.hero-bottom { justify-content: center; bottom: 24px; }
+.hero-bottom .scroll-cue { font-size: 10px; letter-spacing: .13em; }
+.film-art { z-index: 8; opacity: 1; }
+.film-reel {
+  top: clamp(265px, 38vh, 390px);
+  right: clamp(4%, 10vw, 14%);
+  width: clamp(155px, 15vw, 225px);
+  background: radial-gradient(circle at 50% 50%, #11161c 0 44%,#343b44 45% 48%,#8b939d 49% 51%,#252b33 53% 100%);
+  box-shadow: inset 0 2px 5px rgba(255,255,255,.4), inset 0 -12px 20px rgba(0,0,0,.65),0 20px 55px rgba(0,0,0,.8);
+}
+.film-reel::before { border-color: #89909b; background: linear-gradient(145deg,rgba(255,255,255,.22),transparent 50%,rgba(0,0,0,.4)); }
+.film-reel::after { background: linear-gradient(145deg,#adb3bc,#242b33) border-box; }
+.reel-backplate { background: linear-gradient(135deg,#9ba4ad,#303741 35%,#747e89 70%,#1d242c); }
+.reel-winding { background: repeating-radial-gradient(circle,#12171d 0 3px,#545e68 4px 6px,#252b34 7px 9px); border-color: #14191f; }
+.reel-holes span { background: radial-gradient(circle at 35% 30%,#090d12 0 48%,#626c78 58%,#b2bac2 72%,#303740 100%); }
+.reel-hub { background: radial-gradient(circle at 35% 28%,#c5cbd2,#65717d 35%,#1d252e 70%,#8c97a2); border-color: #1c242c; }
+.reel-hub span { background: radial-gradient(circle at 35% 30%,#c2c9d1,#303943 70%); }
+.reel-glint { background: conic-gradient(from 210deg,transparent 0 18%,rgba(255,255,255,.4) 21%,transparent 28% 62%,rgba(255,255,255,.18) 68%,transparent 75%); }
+.film-ribbon {
+  stroke: #414953;
+  stroke-width: 40;
+  stroke-dasharray: 5200;
+  stroke-dashoffset: 5100;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,.6));
+}
+.film-perforations { stroke: #0b0e12; stroke-width: 5; stroke-dasharray: 4 18; stroke-dashoffset: 5100; }
+.film-edge-left,.film-edge-right { fill:none; stroke:#a1a8b0; stroke-width:1.5; stroke-dasharray:5200; stroke-dashoffset:5100; opacity:.75; }
+.film-edge-left { transform: translate(-12px,0); }
+.film-edge-right { transform: translate(12px,0); }
+.film-shadow { stroke-width:54; }
+.intro { background:#f1f2f2; }
+.work { background:linear-gradient(180deg,#10141a,#0b0e12); }
+.contact { background:#f1f2f2; }
+@media (max-width:760px) {
+  .site-header { height:68px; }
+  .main-nav { gap:22px; }
+  .main-nav a { font-size:11px; }
+  .hero { min-height: 100svh; }
+  .hero-collage { inset: 7% -50% 8%; }
+  .collage-frame { min-width: 24vw; }
+  .hero-wordmark { top: 51%; left: 43%; font-size: clamp(55px,16vw,105px); }
+  .film-reel { top: 48%; right: 1%; width: clamp(94px,26vw,135px); }
+  .film-art { height: 2350px; }
+  .film-ribbon { stroke-width: 24; }
+  .film-perforations { stroke-width: 3; }
+  .film-edge-left { transform:translate(-7px,0); }
+  .film-edge-right { transform:translate(7px,0); }
+}
