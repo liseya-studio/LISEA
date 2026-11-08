@@ -258,7 +258,7 @@ function FilmArtwork() {
   )
 }
 
-function HeroScene({ t }: { t: typeof copy.ru }) {
+function HeroScene() {
   return (
     <section className="hero" id="top">
       <div className="hero-grain" aria-hidden="true" />
@@ -317,7 +317,7 @@ function App() {
         </button>
       </header>
 
-      <HeroScene t={t} />
+      <HeroScene />
 
       <section className="intro section-pad" id="services">
         <p className="eyebrow">{t.introLabel}</p>
