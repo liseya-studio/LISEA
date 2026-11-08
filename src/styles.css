@@ -569,3 +569,32 @@ main { background: #0b0e12; }
   .film-edge-left { transform:translate(-7px,0); }
   .film-edge-right { transform:translate(7px,0); }
 }
+
+
+/* LISEA refinements: Good Times wordmark and right-side film exit */
+.hero h1.hero-wordmark {
+  font-family: 'Good Times', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(74px, 11.4vw, 174px);
+  line-height: 1;
+  letter-spacing: -.025em;
+  left: 43%;
+  top: 53%;
+  white-space: nowrap;
+}
+.film-reel {
+  right: clamp(5%, 9vw, 13%);
+  top: clamp(275px, 39vh, 400px);
+}
+.film-ribbon { stroke-dashoffset: 5150; }
+.film-perforations,.film-edge-left,.film-edge-right { stroke-dashoffset: 5150; }
+.hero-bottom { display:none; }
+@media (max-width:760px) {
+  .hero h1.hero-wordmark {
+    font-size: clamp(54px, 15vw, 94px);
+    left: 40%;
+    top: 51%;
+  }
+  .film-reel { right: 1%; top: 48%; }
+}
