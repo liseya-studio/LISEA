@@ -265,7 +265,7 @@ function HeroScene() {
       <div className="hero-collage" aria-hidden="true">
         {frames.map((frame, index) => (
           <div className={`collage-frame collage-layer-${frame.layer}`} key={index}
-            style={{ left: `${frame.x}%`, top: `${frame.y}%`, width: `${frame.w}%`, height: `${frame.h}%`, aspectRatio: frame.ratio, backgroundImage: `linear-gradient(180deg, rgba(5,8,12,.05), rgba(5,8,12,.25)), url("${frame.src}")` }} />
+            style={{ left: `${frame.x}%`, top: `${frame.y}%`, width: `${frame.w}%`, height: frame.layer === 0 ? `${frame.h}%` : 'auto', aspectRatio: frame.ratio, backgroundImage: `linear-gradient(180deg, rgba(5,8,12,.05), rgba(5,8,12,.25)), url("${frame.src}")` }} />
         ))}
       </div>
       <h1 className="hero-wordmark">LISEA</h1>
