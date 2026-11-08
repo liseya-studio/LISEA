@@ -619,3 +619,19 @@ main { background: #0b0e12; }
 @media(max-width:760px) {
   .film-reel { top:48%;right:1%;width:clamp(94px,26vw,135px); }
 }
+
+
+/* Correct the actual preview geometry, not merely the animation order. */
+.hero { min-height:100svh; height:100svh; padding:0; }
+.hero-collage { inset:0; overflow:hidden; }
+.collage-frame { transform-origin:center; background-size:cover; background-position:center; }
+.collage-layer-0 { border:0; border-radius:0; filter:brightness(.5) saturate(.75); }
+.collage-layer-1 { height:auto!important; filter:brightness(.72) saturate(.85); }
+.collage-layer-2 { height:auto!important; filter:brightness(.88) saturate(.92); }
+.hero::after { pointer-events:none; }
+.site-header { background:linear-gradient(to bottom,rgba(4,6,10,.82),transparent); }
+.hero h1.hero-wordmark { font-family:'Good Times',sans-serif; font-weight:400; letter-spacing:-.025em; }
+@media(max-width:760px) {
+  .hero-collage { inset:0; }
+  .collage-layer-1,.collage-layer-2 { min-width:0; }
+}
