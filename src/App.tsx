@@ -8,7 +8,7 @@ type Language = 'ru' | 'en'
 
 const copy = {
   ru: {
-    nav: ['Работы', 'Форматы', 'Контакты'],
+    nav: ['Портфолио', 'Услуги', 'Контакты'],
     scroll: 'ЛИСТАЙТЕ ВНИЗ',
     introLabel: 'МОЙ ПОДХОД',
     introTitle: <>У каждого видео<br />есть свой <span>ритм.</span></>,
@@ -30,7 +30,7 @@ const copy = {
     ],
   },
   en: {
-    nav: ['Work', 'Formats', 'Contacts'],
+    nav: ['Portfolio', 'Services', 'Contacts'],
     scroll: 'SCROLL TO EXPLORE',
     introLabel: 'MY APPROACH',
     introTitle: <>Every video<br />has its own <span>rhythm.</span></>,
@@ -54,10 +54,166 @@ const copy = {
 }
 
 const frames = [
-  [5, 13, 18, -10], [21, 8, 15, 8], [39, 12, 17, -6], [60, 8, 18, 11], [78, 17, 16, -8],
-  [12, 37, 16, 7], [29, 29, 19, -9], [48, 34, 17, 6], [68, 32, 19, -7], [85, 40, 14, 9],
-  [3, 62, 17, -7], [21, 58, 18, 10], [42, 62, 16, -11], [60, 57, 20, 7], [81, 64, 17, -8],
-  [13, 81, 16, 9], [34, 80, 18, -6], [54, 79, 17, 8], [74, 83, 18, -10], [91, 75, 13, 6],
+  {
+    "x": 0,
+    "y": 5,
+    "w": 25,
+    "h": 16,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 18,
+    "y": 4,
+    "w": 24,
+    "h": 17,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 39,
+    "y": 5,
+    "w": 24,
+    "h": 17,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 62,
+    "y": 4,
+    "w": 25,
+    "h": 16,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 82,
+    "y": 7,
+    "w": 23,
+    "h": 16,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 2,
+    "y": 25,
+    "w": 30,
+    "h": 21,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 25,
+    "y": 23,
+    "w": 28,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 48,
+    "y": 24,
+    "w": 30,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 74,
+    "y": 24,
+    "w": 29,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 0,
+    "y": 47,
+    "w": 28,
+    "h": 20,
+    "layer": 2,
+    "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 19,
+    "y": 44,
+    "w": 34,
+    "h": 25,
+    "layer": 2,
+    "src": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 43,
+    "y": 43,
+    "w": 34,
+    "h": 25,
+    "layer": 2,
+    "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 70,
+    "y": 45,
+    "w": 31,
+    "h": 21,
+    "layer": 2,
+    "src": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 1,
+    "y": 68,
+    "w": 27,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 24,
+    "y": 67,
+    "w": 28,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 47,
+    "y": 66,
+    "w": 29,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1514905552197-0610a4d8fd73?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 72,
+    "y": 67,
+    "w": 29,
+    "h": 20,
+    "layer": 1,
+    "src": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 10,
+    "y": 82,
+    "w": 26,
+    "h": 17,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 39,
+    "y": 81,
+    "w": 27,
+    "h": 17,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=75"
+  },
+  {
+    "x": 69,
+    "y": 81,
+    "w": 27,
+    "h": 17,
+    "layer": 0,
+    "src": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=75"
+  }
 ]
 
 function FilmArtwork() {
@@ -74,6 +230,8 @@ function FilmArtwork() {
         <path className="film-shadow" d="M1108 350 C1045 410 1012 476 1058 536 C1108 600 1230 585 1260 680 C1290 780 1110 850 1035 950 C950 1065 1035 1180 1135 1265 C1250 1365 1190 1490 1060 1570 C900 1665 800 1780 860 1900 C920 2020 1070 2090 1010 2220 C950 2350 740 2440 650 2570 C590 2650 500 2670 410 2700" />
         <path className="film-ribbon" d="M1108 350 C1045 410 1012 476 1058 536 C1108 600 1230 585 1260 680 C1290 780 1110 850 1035 950 C950 1065 1035 1180 1135 1265 C1250 1365 1190 1490 1060 1570 C900 1665 800 1780 860 1900 C920 2020 1070 2090 1010 2220 C950 2350 740 2440 650 2570 C590 2650 500 2670 410 2700" />
         <path className="film-perforations" d="M1108 350 C1045 410 1012 476 1058 536 C1108 600 1230 585 1260 680 C1290 780 1110 850 1035 950 C950 1065 1035 1180 1135 1265 C1250 1365 1190 1490 1060 1570 C900 1665 800 1780 860 1900 C920 2020 1070 2090 1010 2220 C950 2350 740 2440 650 2570 C590 2650 500 2670 410 2700" />
+        <path className="film-edge-left" d="M1108 350 C1045 410 1012 476 1058 536 C1108 600 1230 585 1260 680 C1290 780 1110 850 1035 950 C950 1065 1035 1180 1135 1265 C1250 1365 1190 1490 1060 1570 C900 1665 800 1780 860 1900 C920 2020 1070 2090 1010 2220 C950 2350 740 2440 650 2570 C590 2650 500 2670 410 2700" />
+        <path className="film-edge-right" d="M1108 350 C1045 410 1012 476 1058 536 C1108 600 1230 585 1260 680 C1290 780 1110 850 1035 950 C950 1065 1035 1180 1135 1265 C1250 1365 1190 1490 1060 1570 C900 1665 800 1780 860 1900 C920 2020 1070 2090 1010 2220 C950 2350 740 2440 650 2570 C590 2650 500 2670 410 2700" />
       </svg>
       <div className="film-reel">
         <div className="reel-backplate" />
@@ -93,18 +251,13 @@ function HeroScene({ t }: { t: typeof copy.ru }) {
     <section className="hero" id="top">
       <div className="hero-grain" aria-hidden="true" />
       <div className="hero-collage" aria-hidden="true">
-        {frames.map(([x, y, width, rotation], index) => (
-          <div className="collage-frame" key={index} style={{ left: `${x}%`, top: `${y}%`, width: `${width}%`, transform: `rotate(${rotation}deg)` }}>
-            <span className="collage-frame-index">{String(index + 1).padStart(2, '0')}</span>
-          </div>
+        {frames.map((frame, index) => (
+          <div className={`collage-frame collage-layer-${frame.layer}`} key={index}
+            style={{ left: `${frame.x}%`, top: `${frame.y}%`, width: `${frame.w}%`, height: `${frame.h}%`, backgroundImage: `linear-gradient(180deg, rgba(5,8,12,.05), rgba(5,8,12,.25)), url("${frame.src}")` }} />
         ))}
       </div>
       <h1 className="hero-wordmark">LISEA</h1>
-      <div className="hero-bottom">
-        <span>VIDEO EDITOR</span>
-        <a href="#work" className="scroll-cue">{t.scroll} <span>↓</span></a>
-        <span>{t.available}</span>
-      </div>
+      <div className="hero-bottom"><a href="#work" className="scroll-cue">{t.scroll} <span>↓</span></a></div>
     </section>
   )
 }
@@ -118,14 +271,18 @@ function App() {
     if (reduceMotion) return
     const ctx = gsap.context(() => {
       const intro = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      intro.from('.collage-frame', { y: 100, opacity: 0, rotate: 'random(-18,18)', scale: .72, stagger: .045, duration: 1 })
+      intro.from('.collage-layer-0', { y: 35, opacity: 0, scale: .96, stagger: .045, duration: .65 })
+        .from('.collage-layer-1', { y: 42, opacity: 0, scale: .94, stagger: .055, duration: .65 }, '-=.35')
+        .from('.collage-layer-2', { y: 50, opacity: 0, scale: .92, stagger: .065, duration: .7 }, '-=.3')
         .from('.hero-wordmark', { y: 35, opacity: 0, scale: .96, duration: 1.1 }, '+=.1')
-      gsap.to(['.film-ribbon', '.film-perforations'], {
+      gsap.to(['.film-ribbon', '.film-perforations', '.film-edge-left', '.film-edge-right'], {
         strokeDashoffset: 0, ease: 'none',
         scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 1.2 },
       })
       gsap.to('.film-reel', { rotate: 520, ease: 'none', scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 1.5 } })
-      gsap.to('.hero-collage', { yPercent: -12, scale: .94, opacity: .32, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
+      gsap.to('.collage-layer-0', { yPercent: -32, xPercent: -8, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
+      gsap.to('.collage-layer-1', { yPercent: 38, xPercent: 9, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
+      gsap.to('.collage-layer-2', { yPercent: 68, scale: .9, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } })
       gsap.utils.toArray<HTMLElement>('.category-card').forEach((card) => {
         gsap.from(card.querySelectorAll('.category-info, .media-placeholder'), {
           y: 55, opacity: 0, duration: .9, stagger: .15, ease: 'power3.out',
